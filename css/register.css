@@ -1,0 +1,36 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #8c8b8e;
+    font-family: sans-serif;
+}
+.allCantact{
+    padding: 5rem;
+}
+.backgraund{
+    background-color: #dfdfdf ;
+}
+.space-2>* {
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+}
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 0 3% 3% 0;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .9rem 2rem;
+    border:1px solid #f4bd9d;
+    border-radius: 31rem; 
+}
+a{
+    text-decoration: none;
+}
