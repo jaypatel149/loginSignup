@@ -10,7 +10,6 @@
 
     <title>Login-Signup</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="script.js">
 </head>
 <body>
     <div class="container pt-5">
@@ -19,7 +18,7 @@
               <div class="allCantact">
                 <h1 class="h3 mb-3  fw-normal"><strong>Login</strong>&nbsp;&nbsp;&#9996;</h1>
                 <p style="font-size: 1.2rem;">How do i get started lorem ipsum dolor at&#63;</p>
-                <form action="#" id="hidden2" class="mt-5">
+                <form action="#" id="hidden2" class="mt-5" onclick="return  validation()">
                     <div class="LoginGoogle d-flex gap-3">
                         <img class="google" src="./image/google.svg" alt="">
                         <span>Sign in with Google</span>
@@ -31,20 +30,22 @@
                     <div class="mt-4">
                         <p class="text-center signEmail">or Sign in with Email</p>
                     </div>                             
-                    <div class="mb-3 mt-4">
+                    <div class="mb-3 mt-4 form-group">
                         <label for="emaillogin">Email or Username</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                        <input type="email" class="form-control emaillogin" id="email" placeholder="Enter email" name="email">
+                        <span id="userEmail" class="text-danger"></span>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 form-group">
                         <label for="pswdlogin">Password</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                        <input type="password" class="form-control emaillogin" id="pwd" placeholder="Enter password" name="pswd">
+                        <span id="userpass" class="text-danger"></span>
                     </div> 
                     <div class="form-check float-end mb-4">
                         <label class="form-check-label ">
                         <p class="frgt"><a href="#">Forget Password</a></p>
                         </label>
                     </div>
-                    <button class="btn btn-lg login" type="submit" onclick="userLogin()">Login</button>
+                    <button class="btn btn-lg login" type="submit" onclick="pageLogin()">Login</button>
                     <p type="button" class="frgt text-center mt-3"><a href="./paged/register.html">Register</a></p>
                     <p class="mt-5 mb-3 text-muted">&#64;2022 Elegance All Right Reversed</p>                 
                 </form>
@@ -54,7 +55,6 @@
             <img src="./image/5484597.jpg" alt="">
         </div>
       </div>
-    <script src="./js/script.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Authentication/login.js"></script>
 </body>
 </html>

@@ -15,34 +15,44 @@
             <div class="col-6 backgraund">
                 <div class="allCantact">
                     <h1 class="h3 mb-3 fw-normal"><strong>Signup Please..</strong>&nbsp;&nbsp;&#9996;</h1>
-                    <form class="form" id="form">
-                        <div class="mb-3 mt-4">
-                            <label for="firstname">Firstname</label>
+                    <form class="form" id="form" onclick="return  validation()">
+                        <div class="mb-3 mt-4  form-group">
+                            <label for="firstname">FirstName</label>
                             <input type="text" class="form-control" id="firstname" placeholder="Enter your Firstname" autocomplete="off">
+                            <span id="firstName" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="lastname">LastName</label>
                             <input type="text" class="form-control" id="lastname" placeholder="Enter your LastName" autocomplete="off">
+                            <span id="lastName" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="username">UserName</label>
                             <input type="text" class="form-control" id="username" placeholder="Enter your Username" autocomplete="off">
+                            <span id="userName" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3   form-group">
                             <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your Email" autocomplete="off">
+                            <span id="emailName" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="dateofbirth">Date of Birth</label>
                             <input type="date" class="form-control" id="dateofbirth" placeholder="Enter your Date of Birth"autocomplete="off">
+                            <span id="birthName" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="Enter your Password"autocomplete="off">
+                            <span id="passName" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 form-group">
                             <label for="password">Confirm Password</label>
                             <input type="password" class="form-control" id="cpassword" placeholder="Enter your Password Again"autocomplete="off">
+                            <span id="cpassName" class="text-danger"></span>
+                        </div>
+                        <div class="my-4">
+                            <button class="btn btn-lg signup" value="submit" type="submit" >Signup</button>
                         </div>
                         <p class="text-center">If you have a already account so</p>
                         <p class="text-center"><a href="../index.html"><strong>Login Now</strong></a></p>  
@@ -54,6 +64,6 @@
             </div>
         </div>
     </div>
-    <script src="../js/script.js"></script>
+    <script src="../Authentication/register.js"></script>
 </body>
 </html>

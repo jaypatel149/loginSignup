@@ -34,3 +34,11 @@ img{
 a{
     text-decoration: none;
 }
+.btn{
+    width: 100%;
+    border-radius: 31rem; 
+}
+.signup{
+    background: #F5B633 ;
+}
+
