@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-    <div class="container pt-5">
+    <div class="container pt-4">
         <div class="row space-2">
             <div class="col-6 backgraund">
                 <div class="allCantact">
                     <h1 class="h3 mb-3 fw-normal"><strong>Signup Please..</strong>&nbsp;&nbsp;&#9996;</h1>
-                    <form class="form" id="form" onclick="return  validation()">
+                    <form class="form" id="form">
                         <div class="mb-3 mt-4  form-group">
                             <label for="firstname">FirstName</label>
                             <input type="text" class="form-control" id="firstname" placeholder="Enter your Firstname" autocomplete="off">
@@ -52,7 +52,7 @@
                             <span id="cpassName" class="text-danger"></span>
                         </div>
                         <div class="my-4">
-                            <button class="btn btn-lg signup" value="submit" type="submit" >Signup</button>
+                            <button class="btn btn-lg signup" value="submit" type="submit" onclick="validation()">Signup</button>
                         </div>
                         <p class="text-center">If you have a already account so</p>
                         <p class="text-center"><a href="../index.html"><strong>Login Now</strong></a></p>  

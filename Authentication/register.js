@@ -1,42 +1,55 @@
+console.log("I am jaypatel")
+
 function validation() {
+    event.preventDefault()
   let firstName = document.getElementById("firstname").value;
-  let lasName = document.getElementById("lastname").value;
+  let lastName = document.getElementById("lastname").value;
   let userName = document.getElementById("username").value;
   let emailName = document.getElementById("email").value;
   let dateName = document.getElementById("dateofbirth").value;
   let passName = document.getElementById("password").value;
   let cpassName = document.getElementById("cpassword").value;
 
-  window.localStorage.setItem("firstName", firstName);
-  window.localStorage.setItem("lastName", lasName);
-  window.localStorage.setItem("userName", userName);
-  window.localStorage.setItem("emailName", emailName);
-  window.localStorage.setItem("dateofName", dateName);
-  window.localStorage.setItem("passName", passName);
-  window.localStorage.setItem("cpassName", cpassName);
+  
+
+  // document.getElementById("firstname").value="";
+  // document.getElementById("lastname").value="";
+  // document.getElementById("username").value="";
+  // document.getElementById("email").value="";
+  // document.getElementById("dateofbirth").value="";
+  // document.getElementById("password").value="";
+  // document.getElementById("cpassword").value="";
+
 
   let user_records = new Array();
-  user_records = JSON.parse(localStorage.getItem("users"))
-    ? JSON.parse(localStorage.getItem("users"))
-    : [];
-  if (
-    user_records.some((e) => {
-       e.emailName == emailName;
-    })
-  ) {
+  user_records = JSON.parse(localStorage.getItem("users")) ?
+      JSON.parse(localStorage.getItem("users")) : [];
 
-  } else {
-    user_records.push({
-      firstName: firstName,
-      lastName: lasName,
-      userName: userName,
-      emailName: emailName,
-      dateofName: dateName,
-      passName: passName,
-      cpassName: cpassName,
-    });
-    localStorage.setItem("users", JSON.stringify(user_records));
+  if (user_records.some((e) => {
+      return e.firstName == firstName.value
+  })) {
+      alert("Sorry username alredy exists")
   }
+  else if (user_records.some((e) => { return e.email == email.value })) {
+      alert("Sorry email is already exist")
+  }
+  else {
+      user_records.push({
+          "firstname": firstName,
+          "lastname": lastName,
+          "username": userName,
+          "dateofbirth": dateName,
+          "email": emailName,
+          "password": passName,
+      })
+      localStorage.setItem("users", JSON.stringify(user_records));
+      alert("Good job!", "You are Registered Successfully .. Go for Login", "success");
+      setTimeout(function () {
+          window.location.href = "..//index.html"
+      }, 5000);
+  }
+
+        
 
   if (firstName == "") {
     document.getElementById("firstName").innerHTML = "*please fill firstname.";
