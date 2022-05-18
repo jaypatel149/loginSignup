@@ -43,7 +43,9 @@ img{
     cursor: pointer;
 }
 
-
+.form-control{
+    cursor: pointer;
+}
 
 .signEmail{
     width: 100%;

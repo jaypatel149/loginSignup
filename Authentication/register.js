@@ -12,14 +12,6 @@ function validation() {
 
   
 
-  // document.getElementById("firstname").value="";
-  // document.getElementById("lastname").value="";
-  // document.getElementById("username").value="";
-  // document.getElementById("email").value="";
-  // document.getElementById("dateofbirth").value="";
-  // document.getElementById("password").value="";
-  // document.getElementById("cpassword").value="";
-
 
   let user_records = new Array();
   user_records = JSON.parse(localStorage.getItem("users")) ?
@@ -43,13 +35,12 @@ function validation() {
           "password": passName,
       })
       localStorage.setItem("users", JSON.stringify(user_records));
-      alert("Good job!", "You are Registered Successfully .. Go for Login", "success");
+      alert(`You are Registered Successfully .. Go for Login", "success"`);
       setTimeout(function () {
           window.location.href = "..//index.html"
-      }, 5000);
+      }, 2000);
   }
 
-        
 
   if (firstName == "") {
     document.getElementById("firstName").innerHTML = "*please fill firstname.";

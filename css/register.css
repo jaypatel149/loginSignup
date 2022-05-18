@@ -30,6 +30,7 @@ img{
     padding: .9rem 2rem;
     border:1px solid #f4bd9d;
     border-radius: 31rem; 
+    cursor: pointer;
 }
 a{
     text-decoration: none;
