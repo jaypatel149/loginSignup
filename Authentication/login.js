@@ -34,7 +34,7 @@ function pageLogin() {
     if (user_records.some((e) => {
         return e.username == userEmail && v.password == userPass;
     })) {
-        alert(`Good Job`, "You Have Login Successfully, Welcome to Home Page", "success");
+        alert(`You Have Login Successfully`);
         setTimeout(function () {
           window.location.href = "https://github.com/jaypatel149"
       }, 5000);
@@ -42,7 +42,7 @@ function pageLogin() {
     else if (user_records.some((e) => {
         return e.email == userEmail && e.password == userPass;
     })) {
-        alert(`Good Job`, "You Have Login Successfully, Welcome to Home Page", "success"); 
+        alert(`You Have Login Successfully`); 
         setTimeout(function () {
           window.location.href = "https://github.com/jaypatel149"
       }, 5000);
