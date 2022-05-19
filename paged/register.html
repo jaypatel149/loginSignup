@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
-    <div class="container pt-4">
+    <div class="container py-5">
         <div class="row space-2">
             <div class="col-6 backgraund">
                 <div class="allCantact">
@@ -20,41 +20,41 @@
                     <form class="form" id="form">
                         <div class="mb-3 mt-4  form-group">
                             <label for="firstname">FirstName</label>
-                            <input type="text" class="form-control" id="firstname" placeholder="Enter your Firstname" autocomplete="off">
+                            <input type="text" class="form-control" id="firstname" placeholder="Enter your Firstname" autocomplete="off" required>
                             <span id="firstName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="lastname">LastName</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Enter your LastName" autocomplete="off">
+                            <input type="text" class="form-control" id="lastname" placeholder="Enter your LastName" autocomplete="off" required>
                             <span id="lastName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="username">UserName</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter your Username" autocomplete="off">
+                            <input type="text" class="form-control" id="username" placeholder="Enter your Username" autocomplete="off" required>
                             <span id="userName" class="text-danger"></span>
                         </div>
                         <div class="mb-3   form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your Email" autocomplete="off">
+                            <input type="email" class="form-control" id="email" placeholder="Enter your Email" autocomplete="off" required>
                             <span id="emailName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="dateofbirth">Date of Birth</label>
-                            <input type="date" class="form-control" id="dateofbirth" placeholder="Enter your Date of Birth"autocomplete="off">
+                            <input type="date" class="form-control" id="dateofbirth" placeholder="Enter your Date of Birth"autocomplete="off" required>
                             <span id="birthName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your Password"autocomplete="off">
+                            <input type="password" class="form-control" id="password" placeholder="Enter your Password"autocomplete="off" required>
                             <span id="passName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" id="cpassword" placeholder="Enter your Password Again"autocomplete="off">
+                            <input type="password" class="form-control" id="cpassword" placeholder="Enter your Password Again"autocomplete="off" required>
                             <span id="cpassName" class="text-danger"></span>
                         </div>
                         <div class="my-4">
-                            <button class="btn btn-lg signup" value="submit" type="submit" onclick="validation()">Signup</button>
+                            <button class="btn btn-lg signup" id="signup-btn" value="submit" type="submit" onclick="validation()">Signup</button>
                         </div>
                         <p class="text-center">If you have a already account so</p>
                         <p class="text-center"><a href="../index.html"><strong>Login Now</strong></a></p>  

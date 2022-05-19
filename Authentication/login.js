@@ -33,7 +33,7 @@ function pageLogin() {
     else if (user_records.some((e) => {
         return e.email != userEmail;
     })) {
-        alert("Email is not Registered");
+        alert("Email is not valid");
     }
     else {
         alert('Account is not exist,Register First');
