@@ -1,6 +1,21 @@
 console.log("I am jaypatel");
 
-var step = false;
+function check(args) {
+  document.getElementById("firstName").innerHTML = "";
+  document.getElementById("lastName").innerHTML = "";
+  document.getElementById("userName").innerHTML = "";
+  document.getElementById("Email").innerHTML = "";
+  document.getElementById("Password").innerHTML = "";
+  document.getElementById("confirmPassword").innerHTML = "";
+  document.getElementById("dateOfBirth").innerHTML = "";
+  
+
+}
+
+
+let strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+let emailCheck = /^([A-Za-z_]){3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+let dateOfYear = /((0|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
 
 function validation() {
   event.preventDefault();
@@ -11,9 +26,6 @@ function validation() {
   let dateOfBirth = document.getElementById("dateofbirth").value;
   let password = document.getElementById("password").value;
   let confirmPassword = document.getElementById("cpassword").value;
-
-  let strongPassword = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-
 
   let usersRecords = new Array();
   usersRecords = JSON.parse(localStorage.getItem("users"))
@@ -50,34 +62,28 @@ function validation() {
         email: email,
         password: password,
       });
-      localStorage.setItem("users", JSON.stringify(usersRecords));
-      alert(`You are Registered Successfully .. Go for signup", "success"`);
-
-      if (firstName.length < 0) {
-        document.getElementById("signup-btn").disabled = true;
-      }
-
-      setTimeout(function () {
-        window.location.href = "..//index.html";
-      }, 2000);
+      
+      
+      
     }
   }
-
+  
+  
   if (firstName === "") {
     document.getElementById("firstName").innerHTML = "*please fill firstname.";
-    return false;
+    return true;
   }
   if (firstName.length <= 2 || firstName.length > 20) {
     document.getElementById("firstName").innerHTML =
-      "*firstName lengths  must be 2 and 20 .";
+    "*firstName lengths  must be 2 and 20 .";
     return false;
   }
   if (!isNaN(firstName)) {
     document.getElementById("firstName").innerHTML =
-      "*Only characters are allowed";
+    "*Only characters are allowed";
     return false;
   }
-
+  
   if (lastName === "") {
     document.getElementById("lastName").innerHTML = "*please fill lasName.";
     return false;
@@ -86,43 +92,46 @@ function validation() {
     document.getElementById("userName").innerHTML = "*please fill userName.";
     return false;
   }
-  if (email === "") {
-    document.getElementById("email").innerHTML = "*please fill email .";
-    return false;
-  }
-  if (email.indexOf("@") <= 0) {
-    document.getElementById("email").innerHTML = "*@  Invalid Position.";
+
+  if (emailCheck .test(email)) {
+    document.getElementById("Email").innerHTML = "";
+  }else{
+    document.getElementById("Email").innerHTML = "*Email is invalid .";
     return false;
   }
 
-  if (
-    email.charAt(email.length - 4) != "." &&
-    email.charAt(email.length - 3) != "."
-  ) {
-    document.getElementById("email").innerHTML = "*.  Invalid Position.";
+    
+  if (dateOfYear < 18) {
+    document.getElementById("dateOfBirth").innerHTML =""
+  }else{
+    document.getElementById("dateOfBirth").innerHTML ="*Eligibility 18 years ONLY.";
     return false;
   }
-
-  if (dateOfBirth === "") {
-    document.getElementById("birthName").innerHTML =
-      "*please fill dateOfBirth.";
-    return false;
+    
+    
+    
+    if (strongPassword.test(password)){
+      document.getElementById("Password").innerHTML = "";
+      
+    }else{
+      document.getElementById("Password").innerHTML = "* please fill the strong password.";
+      return false;
+    }
+    
+    
+    if (password.match(confirmPassword)) {
+      document.getElementById("Password").innerHTML = "";
+      
+    }else{
+      document.getElementById("confirmPassword").innerHTML ="*password in not matching.";
+      return false;
+    }
+    
+    localStorage.setItem("users", JSON.stringify(usersRecords));
+    alert(`You are Registered Successfully .. Go for signup", "success"`);
+    setTimeout(function () {
+      window.location.href = "..//index.html";
+    }, 2000);
+    
   }
-  if (password === "") {
-    document.getElementById("password").innerHTML = "*please fill password.";
-    return false;
-  }
-  if (password.length >= 5 || password.length > 20) {
-    document.getElementById("password").innerHTML =
-      "*password lengths  must be 2 and 20 .";
-    return false;
-  } else if (strongPassword(password)) {
-    document.getElementById("password").innerHTML = "*Password is not strong.";
-    return false;
-  }
-  if (confirmPassword === "") {
-    document.getElementById("confirmPassword").innerHTML =
-      "*please fill confirmpassName.";
-    return false;
-  }
-}
+  

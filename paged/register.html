@@ -8,7 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Primary Meta Tags -->
     <title>Login-Signup</title>
-
     <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
@@ -20,38 +19,38 @@
                     <form class="form" id="form">
                         <div class="mb-3 mt-4  form-group">
                             <label for="firstname">FirstName</label>
-                            <input type="text" class="form-control" id="firstname" placeholder="Enter your Firstname" autocomplete="off" required>
+                            <input type="text" oninput="check()" class="form-control" id="firstname" placeholder="Enter your Firstname" autocomplete="off" required>
                             <span id="firstName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="lastname">LastName</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Enter your LastName" autocomplete="off" required>
+                            <input type="text"  oninput="check()" class="form-control" id="lastname" placeholder="Enter your LastName" autocomplete="off" required>
                             <span id="lastName" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="username">UserName</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter your Username" autocomplete="off" required>
+                            <input type="text"  oninput="check()" class="form-control" id="username" placeholder="Enter your Username" autocomplete="off" required>
                             <span id="userName" class="text-danger"></span>
                         </div>
                         <div class="mb-3   form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your Email" autocomplete="off" required>
-                            <span id="emailName" class="text-danger"></span>
+                            <input type="email"  oninput="check()" class="form-control" id="email" placeholder="Enter your Email" autocomplete="off" required>
+                            <span id="Email" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="dateofbirth">Date of Birth</label>
-                            <input type="date" class="form-control" id="dateofbirth" placeholder="Enter your Date of Birth"autocomplete="off" required>
-                            <span id="birthName" class="text-danger"></span>
+                            <input type="date"  oninput="check()" class="form-control" id="dateofbirth" placeholder="Enter your Date of Birth"autocomplete="off" required>
+                            <span id="dateOfBirth" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your Password"autocomplete="off" required>
-                            <span id="passName" class="text-danger"></span>
+                            <input type="password"  oninput="check()" class="form-control" id="password" placeholder="Enter your Password"autocomplete="off" required>
+                            <span id="Password" class="text-danger"></span>
                         </div>
                         <div class="mb-3 form-group">
                             <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" id="cpassword" placeholder="Enter your Password Again"autocomplete="off" required>
-                            <span id="cpassName" class="text-danger"></span>
+                            <input type="password"  oninput="check()" class="form-control" id="cpassword" placeholder="Enter your Password Again"autocomplete="off" required>
+                            <span id="confirmPassword" class="text-danger"></span>
                         </div>
                         <div class="my-4">
                             <button class="btn btn-lg signup" id="signup-btn" value="submit" type="submit" onclick="validation()">Signup</button>
