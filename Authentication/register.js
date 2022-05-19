@@ -8,14 +8,11 @@ function check(args) {
   document.getElementById("Password").innerHTML = "";
   document.getElementById("confirmPassword").innerHTML = "";
   document.getElementById("dateOfBirth").innerHTML = "";
-  
-
 }
 
-
-let strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+let strongPassword =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
 let emailCheck = /^([A-Za-z_]){3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
-let dateOfYear = /((0|1[0-9]|2[0-9]|3[0-1])\/(0[1-9]|1[0-2])\/((19|20)\d\d))$/;
 
 function validation() {
   event.preventDefault();
@@ -62,28 +59,24 @@ function validation() {
         email: email,
         password: password,
       });
-      
-      
-      
     }
   }
-  
-  
+
   if (firstName === "") {
     document.getElementById("firstName").innerHTML = "*please fill firstname.";
     return true;
   }
-  if (firstName.length <= 2 || firstName.length > 20) {
+  if (firstName.length < 2 || firstName.length > 20) {
     document.getElementById("firstName").innerHTML =
-    "*firstName lengths  must be 2 and 20 .";
+      "*firstName lengths  must be 2 and 20 .";
     return false;
   }
   if (!isNaN(firstName)) {
     document.getElementById("firstName").innerHTML =
-    "*Only characters are allowed";
+      "*Only characters are allowed";
     return false;
   }
-  
+
   if (lastName === "") {
     document.getElementById("lastName").innerHTML = "*please fill lasName.";
     return false;
@@ -93,45 +86,37 @@ function validation() {
     return false;
   }
 
-  if (emailCheck .test(email)) {
+  if (emailCheck.test(email)) {
     document.getElementById("Email").innerHTML = "";
-  }else{
+  } else {
     document.getElementById("Email").innerHTML = "*Email is invalid .";
     return false;
   }
 
-    
-  if (dateOfYear < 18) {
-    document.getElementById("dateOfBirth").innerHTML =""
-  }else{
-    document.getElementById("dateOfBirth").innerHTML ="*Eligibility 18 years ONLY.";
+  if (dateOfBirth === "") {
+    document.getElementById("dateOfBirth").innerHTML =
+      "*please fill the date of birth.";
     return false;
   }
-    
-    
-    
-    if (strongPassword.test(password)){
-      document.getElementById("Password").innerHTML = "";
-      
-    }else{
-      document.getElementById("Password").innerHTML = "* please fill the strong password.";
-      return false;
-    }
-    
-    
-    if (password.match(confirmPassword)) {
-      document.getElementById("Password").innerHTML = "";
-      
-    }else{
-      document.getElementById("confirmPassword").innerHTML ="*password in not matching.";
-      return false;
-    }
-    
-    localStorage.setItem("users", JSON.stringify(usersRecords));
-    alert(`You are Registered Successfully .. Go for signup", "success"`);
-    setTimeout(function () {
-      window.location.href = "..//index.html";
-    }, 2000);
-    
+
+  if (strongPassword.test(password)) {
+    document.getElementById("Password").innerHTML = "";
+  } else {
+    document.getElementById("Password").innerHTML =
+      "* please fill the strong password.";
+    return false;
   }
-  
+
+  if (password.match(confirmPassword)) {
+    document.getElementById("Password").innerHTML = "";
+  } else {
+    document.getElementById("confirmPassword").innerHTML =
+      "*password in not matching.";
+    return false;
+  }
+  localStorage.setItem("users", JSON.stringify(usersRecords));
+  alert(`You are Registered Successfully .. Go for signup", "success"`);
+  setTimeout(function () {
+    window.location.href = "..//index.html";
+  }, 2000);
+}
